@@ -1,0 +1,22 @@
+C:\Graduaciones Karyme\Graduaciones Karyme\bin\Debug\Graduaciones Karyme.exe.config
+C:\Graduaciones Karyme\Graduaciones Karyme\bin\Debug\Graduaciones Karyme.exe
+C:\Graduaciones Karyme\Graduaciones Karyme\bin\Debug\Graduaciones Karyme.pdb
+C:\Graduaciones Karyme\Graduaciones Karyme\obj\Debug\Graduaciones Karyme.csprojAssemblyReference.cache
+C:\Graduaciones Karyme\Graduaciones Karyme\obj\Debug\Graduaciones_Karyme.Form1.resources
+C:\Graduaciones Karyme\Graduaciones Karyme\obj\Debug\Graduaciones_Karyme.Properties.Resources.resources
+C:\Graduaciones Karyme\Graduaciones Karyme\obj\Debug\Graduaciones Karyme.csproj.GenerateResource.cache
+C:\Graduaciones Karyme\Graduaciones Karyme\obj\Debug\Graduaciones Karyme.csproj.CoreCompileInputs.cache
+C:\Graduaciones Karyme\Graduaciones Karyme\obj\Debug\Graduaciones Karyme.exe
+C:\Graduaciones Karyme\Graduaciones Karyme\obj\Debug\Graduaciones Karyme.pdb
+C:\Users\Ideapad\Source\Repos\Alex-18030050\control-fotografia-2020\Graduaciones Karyme\Graduaciones Karyme\obj\Debug\Graduaciones Karyme.csprojAssemblyReference.cache
+C:\Users\Ideapad\Source\Repos\Alex-18030050\control-fotografia-2020\Graduaciones Karyme\Graduaciones Karyme\obj\Debug\Graduaciones Karyme.exe
+C:\Users\Ideapad\Source\Repos\Alex-18030050\control-fotografia-2020\Graduaciones Karyme\Graduaciones Karyme\obj\Debug\Graduaciones Karyme.pdb
+C:\Users\Ideapad\Source\Repos\Alex-18030050\control-fotografia-2020\Graduaciones Karyme\Graduaciones Karyme\bin\Debug\Graduaciones Karyme.exe.config
+C:\Users\Ideapad\Source\Repos\Alex-18030050\control-fotografia-2020\Graduaciones Karyme\Graduaciones Karyme\bin\Debug\Graduaciones Karyme.exe
+C:\Users\Ideapad\Source\Repos\Alex-18030050\control-fotografia-2020\Graduaciones Karyme\Graduaciones Karyme\bin\Debug\Graduaciones Karyme.pdb
+C:\Users\Ideapad\Source\Repos\Alex-18030050\control-fotografia-2020\Graduaciones Karyme\Graduaciones Karyme\bin\Debug\Bunifu_UI_v1.5.3.dll
+C:\Users\Ideapad\Source\Repos\Alex-18030050\control-fotografia-2020\Graduaciones Karyme\Graduaciones Karyme\obj\Debug\Graduaciones_Karyme.Forms.login.resources
+C:\Users\Ideapad\Source\Repos\Alex-18030050\control-fotografia-2020\Graduaciones Karyme\Graduaciones Karyme\obj\Debug\Graduaciones_Karyme.Properties.Resources.resources
+C:\Users\Ideapad\Source\Repos\Alex-18030050\control-fotografia-2020\Graduaciones Karyme\Graduaciones Karyme\obj\Debug\Graduaciones Karyme.csproj.GenerateResource.cache
+C:\Users\Ideapad\Source\Repos\Alex-18030050\control-fotografia-2020\Graduaciones Karyme\Graduaciones Karyme\obj\Debug\Graduaciones Karyme.csproj.CoreCompileInputs.cache
+C:\Users\Ideapad\Source\Repos\Alex-18030050\control-fotografia-2020\Graduaciones Karyme\Graduaciones Karyme\obj\Debug\Graduaciones Karyme.csproj.CopyComplete
