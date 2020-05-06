@@ -31,5 +31,10 @@ namespace Graduaciones_Karyme.Forms
         {
             Application.Exit();
         }
+
+        private void txt_passwd_OnTextChange(object sender, EventArgs e)
+        {
+
+        }
     }
 }
