@@ -36,6 +36,9 @@
     <Reference Include="Bunifu_UI_v1.5.3">
       <HintPath>..\..\..\..\..\..\..\..\Librerias\Bunifu UI\Bunifu_UI_v1.5.3.dll</HintPath>
     </Reference>
+    <Reference Include="CircularProgressBar, Version=2.8.0.16, Culture=neutral, PublicKeyToken=310fd07b25df79b3, processorArchitecture=MSIL">
+      <HintPath>..\packages\CircularProgressBar.2.8.0.16\lib\net40\CircularProgressBar.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -49,8 +52,97 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WinFormAnimation, Version=1.6.0.4, Culture=neutral, PublicKeyToken=310fd07b25df79b3, processorArchitecture=MSIL">
+      <HintPath>..\packages\WinFormAnimation.1.6.0.4\lib\net40\WinFormAnimation.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clases\cl_globales.cs" />
+    <Compile Include="Clases\Conexion.cs" />
+    <Compile Include="Forms\frm-acercade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frm-acercade.Designer.cs">
+      <DependentUpon>frm-acercade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frm-alumnos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frm-alumnos.Designer.cs">
+      <DependentUpon>frm-alumnos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frm-auditorias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frm-auditorias.Designer.cs">
+      <DependentUpon>frm-auditorias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frm-busquedaavanzada.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frm-busquedaavanzada.Designer.cs">
+      <DependentUpon>frm-busquedaavanzada.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frm-clientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frm-clientes.Designer.cs">
+      <DependentUpon>frm-clientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frm-control.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frm-control.Designer.cs">
+      <DependentUpon>frm-control.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frm-empleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frm-empleados.Designer.cs">
+      <DependentUpon>frm-empleados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frm-escuelas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frm-escuelas.Designer.cs">
+      <DependentUpon>frm-escuelas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frm-extras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frm-extras.Designer.cs">
+      <DependentUpon>frm-extras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frm-grupos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frm-grupos.Designer.cs">
+      <DependentUpon>frm-grupos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frm-informes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frm-informes.Designer.cs">
+      <DependentUpon>frm-informes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frm-menuconsultas-academy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frm-menuconsultas-academy.Designer.cs">
+      <DependentUpon>frm-menuconsultas-academy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frm-menuconsultas-local.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frm-menuconsultas-local.Designer.cs">
+      <DependentUpon>frm-menuconsultas-local.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frm-info-empresarial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frm-info-empresarial.Designer.cs">
+      <DependentUpon>frm-info-empresarial.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\frm-menu-principal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -63,13 +155,100 @@
     <Compile Include="Forms\frm-login.Designer.cs">
       <DependentUpon>frm-login.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\frm-paquetes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frm-paquetes.Designer.cs">
+      <DependentUpon>frm-paquetes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frm-servicios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frm-servicios.Designer.cs">
+      <DependentUpon>frm-servicios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frm-respaldos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frm-respaldos.Designer.cs">
+      <DependentUpon>frm-respaldos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frm-splashInicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frm-splashInicio.Designer.cs">
+      <DependentUpon>frm-splashInicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frm-venta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frm-venta.Designer.cs">
+      <DependentUpon>frm-venta.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\frm-acercade.resx">
+      <DependentUpon>frm-acercade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frm-alumnos.resx">
+      <DependentUpon>frm-alumnos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frm-auditorias.resx">
+      <DependentUpon>frm-auditorias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frm-busquedaavanzada.resx">
+      <DependentUpon>frm-busquedaavanzada.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frm-clientes.resx">
+      <DependentUpon>frm-clientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frm-control.resx">
+      <DependentUpon>frm-control.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frm-empleados.resx">
+      <DependentUpon>frm-empleados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frm-escuelas.resx">
+      <DependentUpon>frm-escuelas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frm-extras.resx">
+      <DependentUpon>frm-extras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frm-grupos.resx">
+      <DependentUpon>frm-grupos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frm-informes.resx">
+      <DependentUpon>frm-informes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frm-menuconsultas-academy.resx">
+      <DependentUpon>frm-menuconsultas-academy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frm-menuconsultas-local.resx">
+      <DependentUpon>frm-menuconsultas-local.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frm-info-empresarial.resx">
+      <DependentUpon>frm-info-empresarial.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\frm-login.resx">
       <DependentUpon>frm-login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frm-menu-principal.resx">
       <DependentUpon>frm-menu-principal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frm-paquetes.resx">
+      <DependentUpon>frm-paquetes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frm-respaldos.resx">
+      <DependentUpon>frm-respaldos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frm-servicios.resx">
+      <DependentUpon>frm-servicios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frm-splashInicio.resx">
+      <DependentUpon>frm-splashInicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frm-venta.resx">
+      <DependentUpon>frm-venta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -80,6 +259,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -94,9 +274,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Forms\Academico\" />
-    <Folder Include="Forms\Local\" />
     <Folder Include="Images\" />
+    <Folder Include="Informes\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
