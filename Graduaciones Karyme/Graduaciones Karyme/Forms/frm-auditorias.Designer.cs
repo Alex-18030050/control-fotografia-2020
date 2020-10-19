@@ -30,13 +30,14 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_auditorias));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.title = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.bunifuImageButton4 = new Bunifu.Framework.UI.BunifuImageButton();
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuImageButton2 = new Bunifu.Framework.UI.BunifuImageButton();
             this.bunifuGradientPanel2 = new Bunifu.Framework.UI.BunifuGradientPanel();
+            this.txtEmpleado = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.tbpgAuditorias = new System.Windows.Forms.TabControl();
             this.tbpgRegistro = new System.Windows.Forms.TabPage();
             this.btnGuardarReg = new Bunifu.Framework.UI.BunifuImageButton();
@@ -89,7 +90,8 @@
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.txtEmpleado = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            this.txtrepetir = new System.Windows.Forms.TextBox();
+            this.bunifuCustomLabel3 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.title.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).BeginInit();
@@ -191,6 +193,28 @@
             this.bunifuGradientPanel2.Quality = 10;
             this.bunifuGradientPanel2.Size = new System.Drawing.Size(878, 512);
             this.bunifuGradientPanel2.TabIndex = 1;
+            // 
+            // txtEmpleado
+            // 
+            this.txtEmpleado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtEmpleado.BackColor = System.Drawing.Color.White;
+            this.txtEmpleado.BorderColorFocused = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.txtEmpleado.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtEmpleado.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.txtEmpleado.BorderThickness = 2;
+            this.txtEmpleado.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtEmpleado.Enabled = false;
+            this.txtEmpleado.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmpleado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
+            this.txtEmpleado.isPassword = false;
+            this.txtEmpleado.Location = new System.Drawing.Point(42, 471);
+            this.txtEmpleado.Margin = new System.Windows.Forms.Padding(4);
+            this.txtEmpleado.MaximumSize = new System.Drawing.Size(800, 800);
+            this.txtEmpleado.Name = "txtEmpleado";
+            this.txtEmpleado.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtEmpleado.Size = new System.Drawing.Size(800, 26);
+            this.txtEmpleado.TabIndex = 29;
+            this.txtEmpleado.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tbpgAuditorias
             // 
@@ -333,6 +357,8 @@
             // 
             this.panelDatos.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelDatos.BackgroundImage")));
             this.panelDatos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelDatos.Controls.Add(this.txtrepetir);
+            this.panelDatos.Controls.Add(this.bunifuCustomLabel3);
             this.panelDatos.Controls.Add(this.txtUsuarioReg);
             this.panelDatos.Controls.Add(this.txtPasswordReg);
             this.panelDatos.Controls.Add(this.bunifuCustomLabel7);
@@ -351,7 +377,7 @@
             // txtUsuarioReg
             // 
             this.txtUsuarioReg.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtUsuarioReg.Location = new System.Drawing.Point(113, 87);
+            this.txtUsuarioReg.Location = new System.Drawing.Point(166, 88);
             this.txtUsuarioReg.MaxLength = 10;
             this.txtUsuarioReg.Name = "txtUsuarioReg";
             this.txtUsuarioReg.Size = new System.Drawing.Size(193, 23);
@@ -362,7 +388,7 @@
             // txtPasswordReg
             // 
             this.txtPasswordReg.Enabled = false;
-            this.txtPasswordReg.Location = new System.Drawing.Point(113, 130);
+            this.txtPasswordReg.Location = new System.Drawing.Point(166, 130);
             this.txtPasswordReg.MaxLength = 9;
             this.txtPasswordReg.Name = "txtPasswordReg";
             this.txtPasswordReg.Size = new System.Drawing.Size(166, 23);
@@ -375,7 +401,7 @@
             this.bunifuCustomLabel7.AutoSize = true;
             this.bunifuCustomLabel7.BackColor = System.Drawing.Color.Transparent;
             this.bunifuCustomLabel7.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel7.Location = new System.Drawing.Point(24, 134);
+            this.bunifuCustomLabel7.Location = new System.Drawing.Point(73, 134);
             this.bunifuCustomLabel7.Name = "bunifuCustomLabel7";
             this.bunifuCustomLabel7.Size = new System.Drawing.Size(87, 15);
             this.bunifuCustomLabel7.TabIndex = 16;
@@ -386,7 +412,7 @@
             this.bunifuCustomLabel8.AutoSize = true;
             this.bunifuCustomLabel8.BackColor = System.Drawing.Color.Transparent;
             this.bunifuCustomLabel8.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel8.Location = new System.Drawing.Point(48, 91);
+            this.bunifuCustomLabel8.Location = new System.Drawing.Point(97, 91);
             this.bunifuCustomLabel8.Name = "bunifuCustomLabel8";
             this.bunifuCustomLabel8.Size = new System.Drawing.Size(62, 15);
             this.bunifuCustomLabel8.TabIndex = 3;
@@ -493,19 +519,19 @@
             // 
             // dgridMovimientos
             // 
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dgridMovimientos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dgridMovimientos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgridMovimientos.BackgroundColor = System.Drawing.Color.White;
             this.dgridMovimientos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgridMovimientos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgridMovimientos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgridMovimientos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgridMovimientos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgridMovimientos.DoubleBuffered = true;
             this.dgridMovimientos.EnableHeadersVisualStyles = false;
@@ -874,27 +900,27 @@
             this.textBox1.Size = new System.Drawing.Size(283, 20);
             this.textBox1.TabIndex = 22;
             // 
-            // txtEmpleado
+            // txtrepetir
             // 
-            this.txtEmpleado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtEmpleado.BackColor = System.Drawing.Color.White;
-            this.txtEmpleado.BorderColorFocused = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
-            this.txtEmpleado.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtEmpleado.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
-            this.txtEmpleado.BorderThickness = 2;
-            this.txtEmpleado.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtEmpleado.Enabled = false;
-            this.txtEmpleado.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmpleado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
-            this.txtEmpleado.isPassword = false;
-            this.txtEmpleado.Location = new System.Drawing.Point(42, 471);
-            this.txtEmpleado.Margin = new System.Windows.Forms.Padding(4);
-            this.txtEmpleado.MaximumSize = new System.Drawing.Size(800, 800);
-            this.txtEmpleado.Name = "txtEmpleado";
-            this.txtEmpleado.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtEmpleado.Size = new System.Drawing.Size(800, 26);
-            this.txtEmpleado.TabIndex = 29;
-            this.txtEmpleado.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtrepetir.Enabled = false;
+            this.txtrepetir.Location = new System.Drawing.Point(166, 170);
+            this.txtrepetir.MaxLength = 9;
+            this.txtrepetir.Name = "txtrepetir";
+            this.txtrepetir.Size = new System.Drawing.Size(166, 23);
+            this.txtrepetir.TabIndex = 17;
+            this.toolTip1.SetToolTip(this.txtrepetir, "Ingrese una contraseña");
+            this.txtrepetir.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtrepetir_KeyPress);
+            // 
+            // bunifuCustomLabel3
+            // 
+            this.bunifuCustomLabel3.AutoSize = true;
+            this.bunifuCustomLabel3.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuCustomLabel3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel3.Location = new System.Drawing.Point(24, 174);
+            this.bunifuCustomLabel3.Name = "bunifuCustomLabel3";
+            this.bunifuCustomLabel3.Size = new System.Drawing.Size(136, 15);
+            this.bunifuCustomLabel3.TabIndex = 18;
+            this.bunifuCustomLabel3.Text = "Repetir contraseña:";
             // 
             // frm_auditorias
             // 
@@ -1005,5 +1031,7 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.GroupBox gboxNiveles;
         public Bunifu.Framework.UI.BunifuMetroTextbox txtEmpleado;
+        private System.Windows.Forms.TextBox txtrepetir;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel3;
     }
 }

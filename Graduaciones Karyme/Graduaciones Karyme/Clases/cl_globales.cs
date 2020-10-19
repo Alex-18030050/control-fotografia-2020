@@ -27,9 +27,9 @@ namespace Graduaciones_Karyme.Clases
             conexion.Close();
             return null;
         }
-        public string GenerateRandom(string passwd) // toDo: Finish the random password for users
+        public string GenerateRandom(string userpass) // toDo: Finish the random password for users
         {
-            return passwd;
+            return userpass;
         }
         public string Encrypt(string passwd)
         {
@@ -119,7 +119,6 @@ namespace Graduaciones_Karyme.Clases
             catch (Exception)
             {
                 MessageBox.Show("Las contraseñas de usuario no pueden tener menos de 9 caracteres", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                
             }
             return passwd;
         }

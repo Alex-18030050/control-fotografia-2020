@@ -153,6 +153,9 @@ namespace Graduaciones_Karyme.Forms
         }
         private void bunifuImageButton2_Click(object sender, EventArgs e)
         {
+            string accion = "Cerro ventana de institucion academica.";
+            Clases.cl_globales hecho = new Clases.cl_globales();
+            hecho.auditoria(username3, accion);
             this.Close();
         }
 
@@ -184,6 +187,10 @@ namespace Graduaciones_Karyme.Forms
             SqlDataReader leer = comando.ExecuteReader();
             if (leer.Read())
             {
+                string accion = "Consulto una institucion academica.";
+                Clases.cl_globales hecho = new Clases.cl_globales();
+                hecho.auditoria(username3, accion);
+
                 txtNombre.Enabled = true;
                 txtRepresentante.Enabled = true;
                 txtTelefono.Enabled = true;
@@ -200,15 +207,16 @@ namespace Graduaciones_Karyme.Forms
                 ConsultaColonias();
                 ConsultaLocalidades();
                 exists = 1;
-                txtRepresentante.Enabled = false;
-                txtTelefono.Enabled = false;
-                txtEmail.Enabled = false;
-                cboxColonia.Enabled = false;
-                cboxLocalidad.Enabled = false;
-                cboxEscuelas.Enabled = false;
+                txtRepresentante.Enabled = true;
+                txtTelefono.Enabled = true;
+                txtEmail.Enabled = true;
+                cboxColonia.Enabled = true;
+                cboxLocalidad.Enabled = true;
+                cboxEscuelas.Enabled = true;
                 txtNombre.Focus();
                 btnEditar.Enabled = false;
                 btnEditar.Visible = false;
+                btnGuardar.Enabled = true;
             }
         }
 
@@ -231,8 +239,7 @@ namespace Graduaciones_Karyme.Forms
             }
             if (e.KeyChar == 27)
             {
-                txtNombre.Clear();
-                txtNombre.Focus();
+                Clean();
             }
         }
 
@@ -240,7 +247,7 @@ namespace Graduaciones_Karyme.Forms
         {
             if (e.KeyChar == 13)
             {
-                if (string.IsNullOrEmpty(txtNombre.Text))
+                if (string.IsNullOrEmpty(txtRepresentante.Text))
                 {
                     MessageBox.Show("El recuadro no deberia estar vacio!", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     txtRepresentante.Clear();
@@ -359,15 +366,37 @@ namespace Graduaciones_Karyme.Forms
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (exists == 1)
+            if (string.IsNullOrEmpty(txtEmail.Text) || string.IsNullOrWhiteSpace(txtEmail.Text)|| string.IsNullOrEmpty(cboxColonia.Text)|| string.IsNullOrEmpty(txtTelefono.Text) || string.IsNullOrWhiteSpace(txtTelefono.Text)|| string.IsNullOrEmpty(cboxLocalidad.Text)|| string.IsNullOrEmpty(txtNombre.Text)|| string.IsNullOrEmpty(txtRepresentante.Text))
             {
-                Actualizar();
+                MessageBox.Show("Ningun campo debe estar vacio. Verifique los datos que introdujo.", "Error",  MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtNombre.Focus();
             }
-            if (exists == 0)
+            else
             {
-                AgregarNuevo(); 
+                if (exists == 1)
+                {
+                    Actualizar();
+                }
+                if (exists == 0)
+                {
+                    AgregarNuevo();
+                }
             }
         }
+
+        private void bunifuImageButton1_Click(object sender, EventArgs e)
+        {
+            string accion = "Cerro ventana de institucion academica.";
+            Clases.cl_globales hecho = new Clases.cl_globales();
+            hecho.auditoria(username3, accion);
+            this.Close();
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            // TASKS: Realizar eliminacion escolar
+        }
+
         private void AgregarNuevo() // ToDo: Hacer with only empleados 
         {
             Max();
@@ -385,8 +414,8 @@ namespace Graduaciones_Karyme.Forms
             comando.Parameters.AddWithValue("IA_ReNom", txtRepresentante.Text);
             comando.Parameters.AddWithValue("IA_IdColonia", cboxColonia.SelectedValue);//Haber como se agrega VERIFICAR SI COINCIDEN LOS ID
             comando.ExecuteNonQuery();
-            MessageBox.Show("Usuario agregado con exito", "Operacion Completada", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            string accion = "Agrego una escuela nuevo";
+            MessageBox.Show("Escuela agregada con exito", "Operacion Completada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            string accion = "Agrego una escuela nueva";
             Clases.cl_globales hecho = new Clases.cl_globales();
             hecho.auditoria(username3, accion);
             //Arreglar para usar el usuario activo desde el menuprincipal
@@ -410,7 +439,7 @@ namespace Graduaciones_Karyme.Forms
             comando.Parameters.AddWithValue("IA_ReNom", txtRepresentante.Text);
             comando.Parameters.AddWithValue("IA_IdColonia", cboxColonia.SelectedValue);//Haber como se agrega VERIFICAR SI COINCIDEN LOS ID
             comando.ExecuteNonQuery();
-            MessageBox.Show("Usuario agregado con exito", "Operacion Completada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Escuela actualizada con exito", "Operacion Completada", MessageBoxButtons.OK, MessageBoxIcon.Information);
             string accion = "Actualizo datos de una escuela";
             Clases.cl_globales hecho = new Clases.cl_globales();
             hecho.auditoria(username3, accion);

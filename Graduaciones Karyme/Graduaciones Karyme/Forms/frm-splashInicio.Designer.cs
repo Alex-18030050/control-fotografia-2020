@@ -57,11 +57,11 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe Script", 26.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Indigo;
-            this.label1.Location = new System.Drawing.Point(353, 589);
+            this.label1.Location = new System.Drawing.Point(158, 589);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(231, 55);
+            this.label1.Size = new System.Drawing.Size(652, 55);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Iniciando...";
+            this.label1.Text = "Iniciando... un momento porfavor";
             // 
             // progressbar
             // 
@@ -89,7 +89,7 @@
             this.progressbar.SubscriptMargin = new System.Windows.Forms.Padding(10, -35, 0, 0);
             this.progressbar.SubscriptText = "";
             this.progressbar.SuperscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
-            this.progressbar.SuperscriptMargin = new System.Windows.Forms.Padding(0, 0, 0, 0);
+            this.progressbar.SuperscriptMargin = new System.Windows.Forms.Padding(0);
             this.progressbar.SuperscriptText = "";
             this.progressbar.TabIndex = 3;
             this.progressbar.TextMargin = new System.Windows.Forms.Padding(8, 8, 0, 0);
@@ -106,6 +106,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Cursor = System.Windows.Forms.Cursors.AppStarting;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frm_splashInicio";
             this.Opacity = 0.9D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

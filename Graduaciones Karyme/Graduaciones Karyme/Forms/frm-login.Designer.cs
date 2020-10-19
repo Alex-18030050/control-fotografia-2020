@@ -357,12 +357,12 @@
         private Bunifu.Framework.UI.BunifuCustomLabel lbl_login;
         private System.Windows.Forms.ToolTip toolTip1;
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
-        private System.Windows.Forms.TextBox txt_user;
         private System.Windows.Forms.TextBox txtPsswdF;
         private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton3;
         private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton1;
         private Bunifu.Framework.UI.BunifuCustomLabel lblNov;
         private Bunifu.Framework.UI.BunifuCustomLabel lblOper;
         private Bunifu.Framework.UI.BunifuCustomLabel lblAdmin;
+        public System.Windows.Forms.TextBox txt_user;
     }
 }

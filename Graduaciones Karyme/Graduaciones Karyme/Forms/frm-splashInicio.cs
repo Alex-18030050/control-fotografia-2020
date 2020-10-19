@@ -44,6 +44,7 @@ namespace Graduaciones_Karyme.Forms
                 Forms.login a = new Forms.login();
                 a.Show();
                 this.Hide();
+                a.txt_user.Focus(); 
             }
         }
 

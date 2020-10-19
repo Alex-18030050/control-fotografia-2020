@@ -189,7 +189,7 @@
             this.bunifuCustomLabel11.BackColor = System.Drawing.Color.Transparent;
             this.bunifuCustomLabel11.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel11.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.bunifuCustomLabel11.Location = new System.Drawing.Point(319, 142);
+            this.bunifuCustomLabel11.Location = new System.Drawing.Point(323, 119);
             this.bunifuCustomLabel11.Name = "bunifuCustomLabel11";
             this.bunifuCustomLabel11.Size = new System.Drawing.Size(90, 22);
             this.bunifuCustomLabel11.TabIndex = 26;
@@ -216,7 +216,7 @@
             this.bunifuCustomLabel10.BackColor = System.Drawing.Color.Transparent;
             this.bunifuCustomLabel10.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel10.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.bunifuCustomLabel10.Location = new System.Drawing.Point(537, 144);
+            this.bunifuCustomLabel10.Location = new System.Drawing.Point(541, 121);
             this.bunifuCustomLabel10.Name = "bunifuCustomLabel10";
             this.bunifuCustomLabel10.Size = new System.Drawing.Size(106, 22);
             this.bunifuCustomLabel10.TabIndex = 22;

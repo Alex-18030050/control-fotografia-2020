@@ -84,3 +84,4 @@ C:\graduaciones-karyme\Graduaciones Karyme\Graduaciones Karyme\obj\Debug\Graduac
 C:\graduaciones-karyme\Graduaciones Karyme\Graduaciones Karyme\bin\Debug\CircularProgressBar.dll
 C:\graduaciones-karyme\Graduaciones Karyme\Graduaciones Karyme\bin\Debug\WinFormAnimation.dll
 C:\graduaciones-karyme\Graduaciones Karyme\Graduaciones Karyme\bin\Debug\CircularProgressBar.xml
+C:\graduaciones-karyme\Graduaciones Karyme\Graduaciones Karyme\obj\Debug\Graduaciones_Karyme.Forms.frm_localidades.resources

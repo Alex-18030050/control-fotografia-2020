@@ -125,6 +125,12 @@
     <Compile Include="Forms\frm-informes.Designer.cs">
       <DependentUpon>frm-informes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\frm-localidades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frm-localidades.Designer.cs">
+      <DependentUpon>frm-localidades.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\frm-menuconsultas-academy.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -219,6 +225,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frm-informes.resx">
       <DependentUpon>frm-informes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frm-localidades.resx">
+      <DependentUpon>frm-localidades.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frm-menuconsultas-academy.resx">
       <DependentUpon>frm-menuconsultas-academy.cs</DependentUpon>

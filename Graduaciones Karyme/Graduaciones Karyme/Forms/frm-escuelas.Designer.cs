@@ -35,6 +35,7 @@
             this.btnSalir = new Bunifu.Framework.UI.BunifuImageButton();
             this.cboxEscuelas = new System.Windows.Forms.ComboBox();
             this.btnEditarfalso = new Bunifu.Framework.UI.BunifuGradientPanel();
+            this.imgCerrar = new Bunifu.Framework.UI.BunifuImageButton();
             this.txtTelefono = new System.Windows.Forms.MaskedTextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.bunifuCustomLabel = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -59,6 +60,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSalir)).BeginInit();
             this.btnEditarfalso.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imgCerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEditar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnGuardar)).BeginInit();
@@ -123,6 +125,7 @@
             this.btnEditarfalso.BackColor = System.Drawing.Color.White;
             this.btnEditarfalso.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEditarfalso.BackgroundImage")));
             this.btnEditarfalso.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnEditarfalso.Controls.Add(this.imgCerrar);
             this.btnEditarfalso.Controls.Add(this.txtTelefono);
             this.btnEditarfalso.Controls.Add(this.txtEmail);
             this.btnEditarfalso.Controls.Add(this.bunifuCustomLabel);
@@ -152,6 +155,22 @@
             this.btnEditarfalso.Quality = 10;
             this.btnEditarfalso.Size = new System.Drawing.Size(1001, 443);
             this.btnEditarfalso.TabIndex = 3;
+            // 
+            // imgCerrar
+            // 
+            this.imgCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.imgCerrar.BackColor = System.Drawing.Color.White;
+            this.imgCerrar.Image = ((System.Drawing.Image)(resources.GetObject("imgCerrar.Image")));
+            this.imgCerrar.ImageActive = null;
+            this.imgCerrar.Location = new System.Drawing.Point(893, 333);
+            this.imgCerrar.Name = "imgCerrar";
+            this.imgCerrar.Size = new System.Drawing.Size(67, 64);
+            this.imgCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.imgCerrar.TabIndex = 189;
+            this.imgCerrar.TabStop = false;
+            this.toolTip1.SetToolTip(this.imgCerrar, "Salir de esta ventana.");
+            this.imgCerrar.Zoom = 10;
+            this.imgCerrar.Click += new System.EventHandler(this.bunifuImageButton1_Click);
             // 
             // txtTelefono
             // 
@@ -251,7 +270,7 @@
             this.btnEditar.Enabled = false;
             this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
             this.btnEditar.ImageActive = null;
-            this.btnEditar.Location = new System.Drawing.Point(505, 124);
+            this.btnEditar.Location = new System.Drawing.Point(517, 99);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(51, 65);
             this.btnEditar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -282,12 +301,13 @@
             this.btnGuardar.Enabled = false;
             this.btnGuardar.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.Image")));
             this.btnGuardar.ImageActive = null;
-            this.btnGuardar.Location = new System.Drawing.Point(632, 312);
+            this.btnGuardar.Location = new System.Drawing.Point(563, 256);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(64, 47);
             this.btnGuardar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnGuardar.TabIndex = 157;
             this.btnGuardar.TabStop = false;
+            this.toolTip1.SetToolTip(this.btnGuardar, "Guardar cambios.");
             this.btnGuardar.Zoom = 10;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
@@ -298,7 +318,7 @@
             this.btnEliminar.Enabled = false;
             this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
             this.btnEliminar.ImageActive = null;
-            this.btnEliminar.Location = new System.Drawing.Point(541, 312);
+            this.btnEliminar.Location = new System.Drawing.Point(472, 256);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(55, 47);
             this.btnEliminar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -306,6 +326,7 @@
             this.btnEliminar.TabStop = false;
             this.btnEliminar.Visible = false;
             this.btnEliminar.Zoom = 10;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnLupa
             // 
@@ -420,6 +441,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnSalir)).EndInit();
             this.btnEditarfalso.ResumeLayout(false);
             this.btnEditarfalso.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imgCerrar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEditar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnGuardar)).EndInit();
@@ -459,5 +481,6 @@
         private System.Windows.Forms.TextBox txtEmail;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel;
         private System.Windows.Forms.MaskedTextBox txtTelefono;
+        private Bunifu.Framework.UI.BunifuImageButton imgCerrar;
     }
 }

@@ -34,6 +34,9 @@ namespace Graduaciones_Karyme.Forms
 
         private void btnexit_Click(object sender, EventArgs e)
         {
+            string accion = "Salio de formulario acerca de.";
+            Clases.cl_globales hecho = new Clases.cl_globales();
+            hecho.auditoria(username2, accion);
             this.Close();
         }
     }

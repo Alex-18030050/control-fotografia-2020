@@ -36,6 +36,9 @@ namespace Graduaciones_Karyme.Forms
 
         private void bunifuImageButton2_Click(object sender, EventArgs e)
         {
+            string accion = "Salio de formulario de servicios fotograficos";
+            Clases.cl_globales hecho = new Clases.cl_globales();
+            hecho.auditoria(username3, accion);
             this.Close();
         }
     }

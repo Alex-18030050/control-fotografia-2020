@@ -38,6 +38,9 @@ namespace Graduaciones_Karyme.Forms
 
         private void bunifuImageButton1_Click(object sender, EventArgs e)
         {
+            string accion = "Salio de formulario de informacion general.";
+            Clases.cl_globales hecho = new Clases.cl_globales();
+            hecho.auditoria(username2, accion);
             this.Close();
         }
 
@@ -232,53 +235,61 @@ namespace Graduaciones_Karyme.Forms
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (exists)
+            if (String.IsNullOrEmpty(txtNombre.Text) || String.IsNullOrEmpty(TxtGerente.Text) || String.IsNullOrEmpty(txtDomicilio.Text) || String.IsNullOrEmpty(txtTelefono.Text) || String.IsNullOrEmpty(txtEmail.Text) || String.IsNullOrEmpty(txtWeb.Text))
             {
-                obj_conexion = new Clases.Conexion();
-                conexion = new SqlConnection(obj_conexion.Con());
-                conexion.Open();
-                string query = " UPDATE DATOSGENERALES SET DG_Nombre=@DG_Nombre, DG_Gerente=@DG_Gerente, DG_Domicilio=@DG_Domicilio, DG_Telefono=@DG_Telefono, DG_Email=@DG_Email, DG_PaginaWeb=@DG_PaginaWeb";
-                SqlCommand comando = new SqlCommand(query, conexion);
-                comando.Parameters.Clear();
-                comando.Parameters.AddWithValue("@DG_Nombre", txtNombre.Text);
-                comando.Parameters.AddWithValue("@DG_Gerente", TxtGerente.Text);
-                comando.Parameters.AddWithValue("@DG_Domicilio", txtDomicilio.Text);
-                comando.Parameters.AddWithValue("@DG_Telefono", txtTelefono.Text);
-                comando.Parameters.AddWithValue("@DG_Email", txtEmail.Text);
-                comando.Parameters.AddWithValue("@DG_PaginaWeb", txtWeb.Text);
-                comando.ExecuteNonQuery();
-                MessageBox.Show("Datos agregados con exito", "Operacion Completada", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                conexion.Close();
-                Clean();
-                Cargar();
-                txtNombre.Enabled = false;
-                string accion = "Actualizo los datos empresariales";
-                Clases.cl_globales hecho = new Clases.cl_globales();
-                hecho.auditoria(username2, accion);
+                MessageBox.Show("Los campos no deben estar vacios.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtNombre.Focus();
             }
-            if (!exists)
+            else
             {
-                obj_conexion = new Clases.Conexion();
-                conexion = new SqlConnection(obj_conexion.Con());
-                conexion.Open();
-                string query = " INSERT INTO DATOSGENERALES VALUES(@DG_Nombre, @DG_Gerente, @DG_Domicilio, @DG_Telefono, @DG_Email, @DG_PaginaWeb)";
-                SqlCommand comando = new SqlCommand(query, conexion);
-                comando.Parameters.Clear();
-                comando.Parameters.AddWithValue("@DG_Nombre", txtNombre.Text);
-                comando.Parameters.AddWithValue("@DG_Gerente", TxtGerente.Text);
-                comando.Parameters.AddWithValue("@DG_Domicilio", txtDomicilio.Text);
-                comando.Parameters.AddWithValue("@DG_Telefono", txtTelefono.Text);
-                comando.Parameters.AddWithValue("@DG_Email", txtEmail.Text);
-                comando.Parameters.AddWithValue("@DG_PaginaWeb", txtWeb.Text);
-                comando.ExecuteNonQuery();
-                MessageBox.Show("Datos agregados con exito", "Operacion Completada", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                conexion.Close();
-                Clean();
-                Cargar();
-                txtNombre.Enabled = false;
-                string accion = "Agrego los datos empresariales";
-                Clases.cl_globales hecho = new Clases.cl_globales();
-                hecho.auditoria(username2, accion);
+                if (exists)
+                {
+                    obj_conexion = new Clases.Conexion();
+                    conexion = new SqlConnection(obj_conexion.Con());
+                    conexion.Open();
+                    string query = " UPDATE DATOSGENERALES SET DG_Nombre=@DG_Nombre, DG_Gerente=@DG_Gerente, DG_Domicilio=@DG_Domicilio, DG_Telefono=@DG_Telefono, DG_Email=@DG_Email, DG_PaginaWeb=@DG_PaginaWeb";
+                    SqlCommand comando = new SqlCommand(query, conexion);
+                    comando.Parameters.Clear();
+                    comando.Parameters.AddWithValue("@DG_Nombre", txtNombre.Text);
+                    comando.Parameters.AddWithValue("@DG_Gerente", TxtGerente.Text);
+                    comando.Parameters.AddWithValue("@DG_Domicilio", txtDomicilio.Text);
+                    comando.Parameters.AddWithValue("@DG_Telefono", txtTelefono.Text);
+                    comando.Parameters.AddWithValue("@DG_Email", txtEmail.Text);
+                    comando.Parameters.AddWithValue("@DG_PaginaWeb", txtWeb.Text);
+                    comando.ExecuteNonQuery();
+                    MessageBox.Show("Datos agregados con exito", "Operacion Completada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    conexion.Close();
+                    Clean();
+                    Cargar();
+                    txtNombre.Enabled = false;
+                    string accion = "Actualizo los datos empresariales";
+                    Clases.cl_globales hecho = new Clases.cl_globales();
+                    hecho.auditoria(username2, accion);
+                }
+                if (!exists)
+                {
+                    obj_conexion = new Clases.Conexion();
+                    conexion = new SqlConnection(obj_conexion.Con());
+                    conexion.Open();
+                    string query = " INSERT INTO DATOSGENERALES VALUES(@DG_Nombre, @DG_Gerente, @DG_Domicilio, @DG_Telefono, @DG_Email, @DG_PaginaWeb)";
+                    SqlCommand comando = new SqlCommand(query, conexion);
+                    comando.Parameters.Clear();
+                    comando.Parameters.AddWithValue("@DG_Nombre", txtNombre.Text);
+                    comando.Parameters.AddWithValue("@DG_Gerente", TxtGerente.Text);
+                    comando.Parameters.AddWithValue("@DG_Domicilio", txtDomicilio.Text);
+                    comando.Parameters.AddWithValue("@DG_Telefono", txtTelefono.Text);
+                    comando.Parameters.AddWithValue("@DG_Email", txtEmail.Text);
+                    comando.Parameters.AddWithValue("@DG_PaginaWeb", txtWeb.Text);
+                    comando.ExecuteNonQuery();
+                    MessageBox.Show("Datos agregados con exito", "Operacion Completada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    conexion.Close();
+                    Clean();
+                    Cargar();
+                    txtNombre.Enabled = false;
+                    string accion = "Agrego los datos empresariales";
+                    Clases.cl_globales hecho = new Clases.cl_globales();
+                    hecho.auditoria(username2, accion);
+                }
             }
         }
 
@@ -292,6 +303,14 @@ namespace Graduaciones_Karyme.Forms
         private void btnEditar_Click(object sender, EventArgs e)
         {
             txtNombre.Enabled = true;
+            txtDomicilio.Enabled = true;
+            txtEmail.Enabled = true;
+            txtTelefono.Enabled = true;
+            txtWeb.Enabled = true;
+            TxtGerente.Enabled = true;
+            txtNombre.Enabled = true;
+            btnGuardar.Visible = true;
+            btnLimpiar.Visible = true;
             txtNombre.Focus();
             btnEditar.Visible = false;
         }
