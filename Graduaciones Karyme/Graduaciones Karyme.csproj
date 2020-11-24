@@ -222,6 +222,12 @@
       <DependentUpon>AuditUser.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Informes\GrupoALumnoNotaFechas.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GrupoALumnoNotaFechas.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\frm-acercade.resx">
@@ -303,6 +309,10 @@
     <EmbeddedResource Include="Informes\AuditUser.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>AuditUser.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Informes\GrupoALumnoNotaFechas.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>GrupoALumnoNotaFechas.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

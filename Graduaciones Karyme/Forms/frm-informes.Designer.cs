@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_informes));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuImageButton4 = new Bunifu.Framework.UI.BunifuImageButton();
@@ -45,6 +45,11 @@
             this.btnOkAlum = new Bunifu.Framework.UI.BunifuImageButton();
             this.label1 = new System.Windows.Forms.Label();
             this.cboxEscuelas = new System.Windows.Forms.ComboBox();
+            this.dpfecha1 = new Bunifu.Framework.UI.BunifuDatepicker();
+            this.dpfecha2 = new Bunifu.Framework.UI.BunifuDatepicker();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btnblimpiaralumn = new Bunifu.Framework.UI.BunifuImageButton();
             this.bunifuGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnExit)).BeginInit();
@@ -53,6 +58,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnImprimirAlum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgAlumnos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnOkAlum)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnblimpiaralumn)).BeginInit();
             this.SuspendLayout();
             // 
             // bunifuGradientPanel1
@@ -149,6 +155,11 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.btnblimpiaralumn);
+            this.tabPage2.Controls.Add(this.label4);
+            this.tabPage2.Controls.Add(this.label2);
+            this.tabPage2.Controls.Add(this.dpfecha2);
+            this.tabPage2.Controls.Add(this.dpfecha1);
             this.tabPage2.Controls.Add(this.btnImprimirAlum);
             this.tabPage2.Controls.Add(this.dgAlumnos);
             this.tabPage2.Controls.Add(this.label3);
@@ -171,7 +182,7 @@
             this.btnImprimirAlum.BackColor = System.Drawing.Color.Transparent;
             this.btnImprimirAlum.Image = ((System.Drawing.Image)(resources.GetObject("btnImprimirAlum.Image")));
             this.btnImprimirAlum.ImageActive = null;
-            this.btnImprimirAlum.Location = new System.Drawing.Point(384, 389);
+            this.btnImprimirAlum.Location = new System.Drawing.Point(444, 389);
             this.btnImprimirAlum.Name = "btnImprimirAlum";
             this.btnImprimirAlum.Size = new System.Drawing.Size(48, 47);
             this.btnImprimirAlum.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -183,27 +194,27 @@
             // dgAlumnos
             // 
             this.dgAlumnos.BackgroundColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgAlumnos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(254)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgAlumnos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgAlumnos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgAlumnos.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgAlumnos.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgAlumnos.GridColor = System.Drawing.Color.Black;
-            this.dgAlumnos.Location = new System.Drawing.Point(6, 68);
+            this.dgAlumnos.Location = new System.Drawing.Point(6, 152);
             this.dgAlumnos.Name = "dgAlumnos";
-            this.dgAlumnos.Size = new System.Drawing.Size(766, 310);
+            this.dgAlumnos.Size = new System.Drawing.Size(766, 226);
             this.dgAlumnos.TabIndex = 224;
             // 
             // label3
@@ -219,11 +230,12 @@
             // cboxgrupo
             // 
             this.cboxgrupo.FormattingEnabled = true;
-            this.cboxgrupo.Location = new System.Drawing.Point(438, 36);
+            this.cboxgrupo.Location = new System.Drawing.Point(444, 36);
             this.cboxgrupo.MaxDropDownItems = 100;
             this.cboxgrupo.Name = "cboxgrupo";
-            this.cboxgrupo.Size = new System.Drawing.Size(280, 26);
+            this.cboxgrupo.Size = new System.Drawing.Size(274, 26);
             this.cboxgrupo.TabIndex = 222;
+            this.cboxgrupo.SelectionChangeCommitted += new System.EventHandler(this.cboxgrupo_SelectionChangeCommitted);
             // 
             // btnOkAlum
             // 
@@ -231,12 +243,13 @@
             this.btnOkAlum.BackColor = System.Drawing.Color.Transparent;
             this.btnOkAlum.Image = ((System.Drawing.Image)(resources.GetObject("btnOkAlum.Image")));
             this.btnOkAlum.ImageActive = null;
-            this.btnOkAlum.Location = new System.Drawing.Point(724, 9);
+            this.btnOkAlum.Location = new System.Drawing.Point(724, 52);
             this.btnOkAlum.Name = "btnOkAlum";
             this.btnOkAlum.Size = new System.Drawing.Size(48, 47);
             this.btnOkAlum.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnOkAlum.TabIndex = 221;
             this.btnOkAlum.TabStop = false;
+            this.btnOkAlum.Visible = false;
             this.btnOkAlum.Zoom = 10;
             this.btnOkAlum.Click += new System.EventHandler(this.btnOkAlum_Click);
             // 
@@ -260,6 +273,75 @@
             this.cboxEscuelas.TabIndex = 219;
             this.cboxEscuelas.SelectionChangeCommitted += new System.EventHandler(this.cboxEscuelas_SelectionChangeCommitted);
             this.cboxEscuelas.Click += new System.EventHandler(this.cboxEscuelas_Click);
+            // 
+            // dpfecha1
+            // 
+            this.dpfecha1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.dpfecha1.BorderRadius = 0;
+            this.dpfecha1.ForeColor = System.Drawing.Color.White;
+            this.dpfecha1.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.dpfecha1.FormatCustom = null;
+            this.dpfecha1.Location = new System.Drawing.Point(125, 90);
+            this.dpfecha1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.dpfecha1.Name = "dpfecha1";
+            this.dpfecha1.Size = new System.Drawing.Size(280, 36);
+            this.dpfecha1.TabIndex = 226;
+            this.dpfecha1.Value = new System.DateTime(2020, 11, 24, 13, 41, 8, 14);
+            this.dpfecha1.Visible = false;
+            this.dpfecha1.onValueChanged += new System.EventHandler(this.dpfecha1_onValueChanged);
+            this.dpfecha1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dpfecha1_MouseClick);
+            // 
+            // dpfecha2
+            // 
+            this.dpfecha2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.dpfecha2.BorderRadius = 0;
+            this.dpfecha2.ForeColor = System.Drawing.Color.White;
+            this.dpfecha2.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.dpfecha2.FormatCustom = null;
+            this.dpfecha2.Location = new System.Drawing.Point(444, 90);
+            this.dpfecha2.Margin = new System.Windows.Forms.Padding(8, 6, 8, 6);
+            this.dpfecha2.Name = "dpfecha2";
+            this.dpfecha2.Size = new System.Drawing.Size(274, 36);
+            this.dpfecha2.TabIndex = 227;
+            this.dpfecha2.Value = new System.DateTime(2020, 11, 24, 13, 41, 8, 14);
+            this.dpfecha2.Visible = false;
+            this.dpfecha2.onValueChanged += new System.EventHandler(this.dpfecha2_onValueChanged);
+            this.dpfecha2.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dpfecha2_MouseClick);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14F);
+            this.label2.Location = new System.Drawing.Point(4, 96);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(120, 22);
+            this.label2.TabIndex = 228;
+            this.label2.Text = "Periodo del:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14F);
+            this.label4.Location = new System.Drawing.Point(407, 96);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(35, 22);
+            this.label4.TabIndex = 229;
+            this.label4.Text = "Al:";
+            // 
+            // btnblimpiaralumn
+            // 
+            this.btnblimpiaralumn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnblimpiaralumn.BackColor = System.Drawing.Color.Transparent;
+            this.btnblimpiaralumn.Image = ((System.Drawing.Image)(resources.GetObject("btnblimpiaralumn.Image")));
+            this.btnblimpiaralumn.ImageActive = null;
+            this.btnblimpiaralumn.Location = new System.Drawing.Point(357, 389);
+            this.btnblimpiaralumn.Name = "btnblimpiaralumn";
+            this.btnblimpiaralumn.Size = new System.Drawing.Size(48, 47);
+            this.btnblimpiaralumn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnblimpiaralumn.TabIndex = 230;
+            this.btnblimpiaralumn.TabStop = false;
+            this.btnblimpiaralumn.Zoom = 10;
+            this.btnblimpiaralumn.Click += new System.EventHandler(this.btnblimpiaralumn_Click);
             // 
             // frm_informes
             // 
@@ -285,6 +367,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnImprimirAlum)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgAlumnos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnOkAlum)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnblimpiaralumn)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -305,5 +388,10 @@
         private Bunifu.Framework.UI.BunifuImageButton btnOkAlum;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cboxEscuelas;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label2;
+        private Bunifu.Framework.UI.BunifuDatepicker dpfecha2;
+        private Bunifu.Framework.UI.BunifuDatepicker dpfecha1;
+        private Bunifu.Framework.UI.BunifuImageButton btnblimpiaralumn;
     }
 }

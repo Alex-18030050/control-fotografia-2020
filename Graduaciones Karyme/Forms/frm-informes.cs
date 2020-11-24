@@ -49,6 +49,19 @@ namespace Graduaciones_Karyme.Forms
 
         //---------------------------------------------------------------------------ALUMNOS-----------------------------------------------------------------------------//
 
+        private void Cleanalumn()
+        {
+            dpfecha1.Value = DateTime.Now;
+            dpfecha2.Value = DateTime.Now;
+            dpfecha1.Visible = false;
+            dpfecha2.Visible = false;
+            btnOkAlum.Visible = false;
+            cboxgrupo.Text = "";
+            cboxgrupo.Items.Clear();
+            dgAlumnos.DataSource = null;
+            dgAlumnos.Rows.Clear();
+            dgAlumnos.Refresh();
+        }
         private void LlenarEscuelas()
         {
             try
@@ -169,15 +182,68 @@ namespace Graduaciones_Karyme.Forms
         private void btnImprimirAlum_Click(object sender, EventArgs e)
         {
             // STill falta para ver reporte
-            MessageBox.Show("Desea cargar este grupo?", "AVISO", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (MessageBox.Show("Desea cargar este grupo?", "AVISO", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK);
+            {
+                string fecha1= dpfecha1.Value.ToString();
+                string fecha2 = dpfecha2.Value.ToString();
+                Forms.frm_reportes R = new Forms.frm_reportes();
+                ReportDocument oRep = new ReportDocument();
+                oRep.Load(@"C:\graduaciones-karyme\Graduaciones Karyme\Informes\GrupoALumnoNotaFechas.rpt");
+                oRep.SetParameterValue("@Fecha1", fecha1);
+                oRep.SetParameterValue("@Fecha2", fecha2);
+                oRep.SetParameterValue("@Institucion", cboxgrupo.SelectedItem.ToString()); ;
+                oRep.SetParameterValue("@IDIA", id);
+                R.crystalReportViewer1.ReportSource = oRep;
+                R.Show();
+            }
         }
 
         private void cboxEscuelas_SelectionChangeCommitted(object sender, EventArgs e)
         {
             AgarrarID();
         }
+
+        private void cboxgrupo_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            dpfecha1.Visible = true;
+        }
+
+        private void dpfecha1_MouseClick(object sender, MouseEventArgs e)
+        {
+            dpfecha2.Visible = true;
+        }
+
+        private void dpfecha2_MouseClick(object sender, MouseEventArgs e)
+        {
+            btnOkAlum.Visible = true;
+        }
+
+        private void dpfecha1_onValueChanged(object sender, EventArgs e)
+        {
+            dpfecha2.Visible = true;
+        }
+
+        private void dpfecha2_onValueChanged(object sender, EventArgs e)
+        {
+            btnOkAlum.Visible = true;
+        }
+
+        private void btnblimpiaralumn_Click(object sender, EventArgs e)
+        {
+            Cleanalumn();
+        }
     }
 }
+
+/*
+ //MOSTRAR EN REPORTE CREANDO INSTANCIA DE FORM REPORTES
+                    Forms.frm_reportes R = new Forms.frm_reportes();
+                    ReportDocument oRep = new ReportDocument();
+                    oRep.Load(@"C:\graduaciones-karyme\Graduaciones Karyme\Informes\AuditAll.rpt");
+                    oRep.SetParameterValue("@Fecha1", fecha1);
+                    oRep.SetParameterValue("@Fecha2", fecha2);
+                    R.crystalReportViewer1.ReportSource = oRep;
+                    R.Show(); */
 
 //TASKS: 
 // REPORTE DE ALUMNOS por fechas
