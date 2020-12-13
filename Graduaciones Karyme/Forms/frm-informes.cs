@@ -17,6 +17,8 @@ namespace Graduaciones_Karyme.Forms
     public partial class frm_informes : Form
     {
         int id;
+        char VentaEleccion;
+        string fecha1Alum, fecha2Alum, fecha1F1, fecha2F2;
         Clases.Conexion obj_conexion;
         SqlConnection conexion;
         public string username2;
@@ -61,6 +63,8 @@ namespace Graduaciones_Karyme.Forms
             dgAlumnos.DataSource = null;
             dgAlumnos.Rows.Clear();
             dgAlumnos.Refresh();
+            btnblimpiaralumn.Visible = false;
+            btnImprimirAlum.Visible = false;
         }
         private void LlenarEscuelas()
         {
@@ -119,7 +123,7 @@ namespace Graduaciones_Karyme.Forms
             //Clases.cl_globales hecho = new Clases.cl_globales();
             // hecho.auditoria
         }
-        private void LlenarGrupos()  // OKAY
+         private void LlenarGrupos()  // OKAY
         {
             try
             {
@@ -145,7 +149,7 @@ namespace Graduaciones_Karyme.Forms
             }
             //cboxgrupo.Enabled = false;
         }
-        public void LlenarGrid() //Okay?
+        public void LlenarGrid() //Okay
         {
             try
             {
@@ -176,25 +180,37 @@ namespace Graduaciones_Karyme.Forms
 
         private void btnOkAlum_Click(object sender, EventArgs e)
         {
+            fecha1Alum = dpfecha1.Value.ToString();
+            fecha2Alum = dpfecha2.Value.ToString();
             LlenarGrid();
+            btnblimpiaralumn.Visible = true;
+            btnImprimirAlum.Visible = true;
+            string accion = "Consulto registro de venta de los alumnos";
+            Clases.cl_globales hecho = new Clases.cl_globales();
+            hecho.auditoria(username2, accion);
         }
 
         private void btnImprimirAlum_Click(object sender, EventArgs e)
         {
-            // STill falta para ver reporte
-            if (MessageBox.Show("Desea cargar este grupo?", "AVISO", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK);
+            if (MessageBox.Show("Desea cargar este grupo?", "AVISO", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
             {
-                string fecha1= dpfecha1.Value.ToString();
-                string fecha2 = dpfecha2.Value.ToString();
                 Forms.frm_reportes R = new Forms.frm_reportes();
                 ReportDocument oRep = new ReportDocument();
                 oRep.Load(@"C:\graduaciones-karyme\Graduaciones Karyme\Informes\GrupoALumnoNotaFechas.rpt");
-                oRep.SetParameterValue("@Fecha1", fecha1);
-                oRep.SetParameterValue("@Fecha2", fecha2);
-                oRep.SetParameterValue("@Institucion", cboxgrupo.SelectedItem.ToString()); ;
+                oRep.SetParameterValue("@Fecha1", fecha1Alum);
+                oRep.SetParameterValue("@Fecha2", fecha2Alum);
+                oRep.SetParameterValue("@Institucion", cboxgrupo.SelectedItem.ToString());
                 oRep.SetParameterValue("@IDIA", id);
                 R.crystalReportViewer1.ReportSource = oRep;
                 R.Show();
+                Cleanalumn();
+                string accion = "Genero informe de ventas del alumnado";
+                Clases.cl_globales hecho = new Clases.cl_globales();
+                hecho.auditoria(username2, accion);
+            } 
+            else
+            {
+                btnblimpiaralumn.Focus();
             }
         }
 
@@ -232,20 +248,273 @@ namespace Graduaciones_Karyme.Forms
         {
             Cleanalumn();
         }
+        //------------------------------------------------------------------VENTAS-----------------------------------------------------------------
+        private void CleanVenta()
+        {
+            rbTodas.AutoCheck = false;
+            rbTodas.Checked = false;
+            rbTodas.AutoCheck = true;
+            rbLiquidadas.AutoCheck = false;
+            rbLiquidadas.Checked = false;
+            rbLiquidadas.AutoCheck = true;
+            rbPorUsuario.AutoCheck = false;
+            rbPorUsuario.Checked = false;
+            rbPorUsuario.AutoCheck = true;
+            dpVentaF1.Value = DateTime.Now;
+            dpVentaF2.Value = DateTime.Now;
+            dpVentaF1.Visible = false;
+            dpVentaF2.Visible = false;
+            btnVentaOk.Visible = false;
+            dgVentas.DataSource = null;
+            dgVentas.Rows.Clear();
+            dgVentas.Refresh();
+            btnLimpiarVenta.Visible = false;
+            bntImprimirVenta.Visible = false;
+            cboxUsersVent.Enabled = false;
+            rbTodas.Enabled = true;
+            rbLiquidadas.Enabled = true;
+            rbPorUsuario.Enabled = true;
+        }
+        private void LlenarUsuarios() 
+        {
+            try
+            {
+                cboxUsersVent.Text = "";
+                cboxUsersVent.Items.Clear();
+                 DataTable dt = new DataTable();
+                obj_conexion = new Clases.Conexion();
+                conexion = new SqlConnection(obj_conexion.Con());
+                conexion.Open();
+                string query = "SELECT * FROM USUARIOS ORDER BY US_Login";
+                SqlCommand comando = new SqlCommand(query, conexion);
+                SqlDataAdapter da = new SqlDataAdapter(comando);
+                da.Fill(dt);
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    cboxUsersVent.Items.Add(dt.Rows[i]["US_Login"].ToString());
+                }
+                cboxUsersVent.SelectedIndex = 0;
+                conexion.Close();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + "LLENAR UsersVenta ERROR");
+            }
+        }
+        public void LlenarGridTodas()
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                obj_conexion = new Clases.Conexion();
+                conexion = new SqlConnection(obj_conexion.Con());
+                conexion.Open();
+                string query = "select ND.ND_Login as 'USUARIO',ND.ND_Fecha as 'FECHA',AL.AL_Nombre as 'NOMBRE',AL.AL_ApellidoPat as 'APELLIDO PATERNO', AL.AL_ApellidoMat as 'APELLIDO MATERNO',p.PAQ_Nombre as 'NOMBRE DEL PAQUETE',p.PAQ_Contenido as 'CONTENIDO',p.PAQ_PrecioVenta as 'PRECIO PAQUETE',s.Nombre as 'SERVICIO',s.Precio as 'PRECIO DEL SERVICIO',e.EX_Nombre as 'EXTRA',e.EX_Precio as 'PRECIO DEL EXTRA',ND.ND_Descripcion as 'DESCRIPCION',ND.ND_PrecioTotal as 'TOTAL', ND.ND_Anticipo as 'ANTICIPO',ND.ND_Debe as 'DEBE' FROM NOTA_DETALLE ND inner join ALUMNOS AL on ND.ND_IdAlumno = Al.AL_Id inner join PAQUETES P on ND.ND_IdPaquete = P.PAQ_Id inner join SERVICIOS S on ND.ND_IdServicio = s.Ser_id inner join EXTRAS E on ND.ND_IdExtra = E.EX_Id ";
+                SqlCommand comando = new SqlCommand(query, conexion);
+                SqlDataAdapter da = new SqlDataAdapter(comando);
+                da.Fill(dt);
+                dgVentas.DataSource = dt;
+                conexion.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + "LLENAR GRID ERROR");
+            }
+        }//OKAY
+        public void LlenarGridLiq()
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                obj_conexion = new Clases.Conexion();
+                conexion = new SqlConnection(obj_conexion.Con());
+                conexion.Open();
+                string query = "select ND.ND_Fecha as 'FECHA', CONCAT (AL.AL_Nombre,' ', AL.AL_ApellidoPat,' ', AL.AL_ApellidoMat) as 'ALUMNO', ND.ND_Descripcion as 'DESCRIPCION', ND.ND_PrecioTotal as 'TOTAL', ND.ND_Anticipo as 'ANTICIPO', ND.ND_Debe as 'DEBE' from NOTA_DETALLE ND inner join ALUMNOS AL on ND.ND_IdAlumno = Al.AL_Id where ND_Debe = 0 and ND.ND_Fecha between '" + fecha1Alum + "' and  '" + fecha2Alum + "' order by ND.ND_Fecha";
+                SqlCommand comando = new SqlCommand(query, conexion);
+                SqlDataAdapter da = new SqlDataAdapter(comando);
+                da.Fill(dt);
+                dgVentas.DataSource = dt;
+                conexion.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + "LLENAR GRID ERROR");
+            }
+        }//Okay
+        public void LlenarGridUser()
+        {
+            try
+            {
+                string user = cboxUsersVent.SelectedItem.ToString();
+                DataTable dt = new DataTable();
+                obj_conexion = new Clases.Conexion();
+                conexion = new SqlConnection(obj_conexion.Con());
+                conexion.Open();
+                string query = "select ND.ND_Login as 'USUARIO',ND.ND_Fecha as 'FECHA',AL.AL_Nombre as 'NOMBRE',AL.AL_ApellidoPat as 'APELLIDO PATERNO', AL.AL_ApellidoMat as 'APELLIDO MATERNO',p.PAQ_Nombre as 'NOMBRE DEL PAQUETE',p.PAQ_Contenido as 'CONTENIDO',p.PAQ_PrecioVenta as 'PRECIO PAQUETE',s.Nombre as 'SERVICIO',s.Precio as 'PRECIO DEL SERVICIO',e.EX_Nombre as 'EXTRA',e.EX_Precio as 'PRECIO DEL EXTRA',ND.ND_Descripcion as 'DESCRIPCION',ND.ND_PrecioTotal as 'TOTAL', ND.ND_Anticipo as 'ANTICIPO',(select ND.ND_PrecioTotal - ND.ND_Anticipo) as 'DEBE' FROM NOTA_DETALLE ND inner join ALUMNOS AL on ND.ND_IdAlumno = Al.AL_Id inner join PAQUETES P on ND.ND_IdPaquete = P.PAQ_Id inner join SERVICIOS S on ND.ND_IdServicio = s.Ser_id inner join EXTRAS E on ND.ND_IdExtra = E.EX_Id where ND.ND_Login = '"+ user +"' and (ND.ND_Fecha between '"+fecha1Alum+"' and  '"+ fecha2Alum + "') order by ND.ND_Fecha ";
+                SqlCommand comando = new SqlCommand(query, conexion);
+                SqlDataAdapter da = new SqlDataAdapter(comando);
+                da.Fill(dt);
+                dgVentas.DataSource = dt;
+                conexion.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + "LLENAR GRID ERROR");
+            }
+        }//OKAY
+
+        private void rbTodas_CheckedChanged(object sender, EventArgs e)
+        {
+            rbLiquidadas.Enabled = false;
+            rbPorUsuario.Enabled = false;
+            dpVentaF1.Visible = true;
+            VentaEleccion = 'T';
+            btnLimpiarVenta.Visible = true;
+        }
+
+        private void rbLiquidadas_CheckedChanged(object sender, EventArgs e)
+        {
+            rbTodas.Enabled = false;
+            rbPorUsuario.Enabled = false;
+            dpVentaF1.Visible = true;
+            VentaEleccion = 'L';
+            btnLimpiarVenta.Visible = true;
+        }
+
+        private void rbPorUsuario_CheckedChanged(object sender, EventArgs e)
+        {
+            rbTodas.Enabled = false;
+            rbLiquidadas.Enabled = false;
+            VentaEleccion = 'P';
+            cboxUsersVent.Enabled = true;
+            LlenarUsuarios();
+            btnLimpiarVenta.Visible = true;
+        }
+
+        private void cboxUsersVent_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            dpVentaF1.Visible = true;
+
+        }
+
+        private void dpVentaF1_onValueChanged(object sender, EventArgs e)
+        {
+            dpVentaF2.Visible = true;
+            dgVentas.DataSource = null;
+            dgVentas.Rows.Clear();
+            dgVentas.Refresh();
+        }
+
+        private void dpVentaF2_onValueChanged(object sender, EventArgs e)
+        {
+            btnVentaOk.Visible = true;
+            dgVentas.DataSource = null;
+            dgVentas.Rows.Clear();
+            dgVentas.Refresh();
+        }
+
+        private void btnVentaOk_Click(object sender, EventArgs e) //Still NO
+        {
+            //MessageBox.Show(VentaEleccion.ToString());
+            fecha1Alum = dpVentaF1.Value.ToString();
+            fecha2Alum = dpVentaF2.Value.ToString();
+            bntImprimirVenta.Visible = true;
+            if (VentaEleccion == 'T')
+            {
+                LlenarGridTodas();
+            }
+            if (VentaEleccion == 'L')
+            {
+                LlenarGridLiq();
+            }
+            if (VentaEleccion == 'P')
+            {
+                LlenarGridUser();
+                //string accion = "Genero consultol registro de ventas  usuario";
+                //Clases.cl_globales hecho = new Clases.cl_globales();
+                //hecho.auditoria(username2, accion);
+            }
+        }
+        private void btnLimpiarVenta_Click(object sender, EventArgs e)
+        {
+            CleanVenta();
+        }
+        private void bntImprimirVenta_Click(object sender, EventArgs e) //Still NO
+        {
+            if (VentaEleccion == 'T')
+            {
+                if (MessageBox.Show("Desea cargar estos datos?", "AVISO", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+                {
+                    Forms.frm_reportes R = new Forms.frm_reportes();
+                    ReportDocument oRep = new ReportDocument();
+                    oRep.Load(@"C:\graduaciones-karyme\Graduaciones Karyme\Informes\VentasTodas.rpt");
+                    oRep.SetParameterValue("@Fecha1", fecha1Alum);
+                    oRep.SetParameterValue("@Fecha2", fecha2Alum);
+                    R.crystalReportViewer1.ReportSource = oRep;
+                    R.Show();
+                    CleanVenta();
+                    string accion = "Genero informe de todas las ventas";
+                    Clases.cl_globales hecho = new Clases.cl_globales();
+                    hecho.auditoria(username2, accion);
+                }
+                else
+                {
+                    btnLimpiarVenta.Focus();
+                }
+            }//NO
+            if (VentaEleccion == 'L')
+            {
+                if (MessageBox.Show("Desea cargar estos datos?", "AVISO", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+                {
+                    Forms.frm_reportes R = new Forms.frm_reportes();
+                    ReportDocument oRep = new ReportDocument();
+                    oRep.Load(@"C:\graduaciones-karyme\Graduaciones Karyme\Informes\VentasLiquidadas.rpt");
+                    oRep.SetParameterValue("@Fecha1", fecha1Alum);
+                    oRep.SetParameterValue("@Fecha2", fecha2Alum);
+                    R.crystalReportViewer1.ReportSource = oRep;
+                    R.Show();
+                    CleanVenta();
+                    string accion = "Genero informe de ventas liquidadas";
+                    Clases.cl_globales hecho = new Clases.cl_globales();
+                    hecho.auditoria(username2, accion);
+                }
+                else
+                {
+                    btnLimpiarVenta.Focus();
+                }
+            }//NO
+            if (VentaEleccion == 'P')
+            {
+                //reporte users
+                if (MessageBox.Show("Desea cargar estos datos?", "AVISO", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+                {
+                    Forms.frm_reportes R = new Forms.frm_reportes();
+                    ReportDocument oRep = new ReportDocument();
+                    oRep.Load(@"C:\graduaciones-karyme\Graduaciones Karyme\Informes\VentasPorUsuarios.rpt");
+                    oRep.SetParameterValue("@Fecha1", fecha1Alum);
+                    oRep.SetParameterValue("@Fecha2", fecha2Alum);
+                    oRep.SetParameterValue("@login", cboxUsersVent.SelectedItem.ToString());
+                    R.crystalReportViewer1.ReportSource = oRep;
+                    R.Show();
+                    CleanVenta();
+                    string accion = "Genero informe de venta de usuario";
+                    Clases.cl_globales hecho = new Clases.cl_globales();
+                    hecho.auditoria(username2, accion);
+                }
+                else
+                {
+                    btnLimpiarVenta.Focus();
+                }
+            }//SI
+        }
     }
 }
 
-/*
- //MOSTRAR EN REPORTE CREANDO INSTANCIA DE FORM REPORTES
-                    Forms.frm_reportes R = new Forms.frm_reportes();
-                    ReportDocument oRep = new ReportDocument();
-                    oRep.Load(@"C:\graduaciones-karyme\Graduaciones Karyme\Informes\AuditAll.rpt");
-                    oRep.SetParameterValue("@Fecha1", fecha1);
-                    oRep.SetParameterValue("@Fecha2", fecha2);
-                    R.crystalReportViewer1.ReportSource = oRep;
-                    R.Show(); */
-
 //TASKS: 
-// REPORTE DE ALUMNOS por fechas
+// REPORTE DE ALUMNOS por fechas DONE
+//REPORTE  de usuario y DE VENTAS por fechas Done
+//REPORTE DE LIQUIDADAS
+//REPORTE DE TODAS LAS VENTAS
 // LLENAR MAS DATOS
-//REPORTE DE VENTAS
+//Finish grid methods DONE

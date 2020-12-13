@@ -17,7 +17,7 @@ namespace Graduaciones_Karyme
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Forms.frm_informes());
+            Application.Run(new Forms.frm_venta());
         }
     }
 }

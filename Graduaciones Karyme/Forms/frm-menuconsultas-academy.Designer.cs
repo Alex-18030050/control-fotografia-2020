@@ -96,7 +96,7 @@
             this.btnlocalidades.BackColor = System.Drawing.Color.WhiteSmoke;
             this.btnlocalidades.Image = ((System.Drawing.Image)(resources.GetObject("btnlocalidades.Image")));
             this.btnlocalidades.ImageActive = null;
-            this.btnlocalidades.Location = new System.Drawing.Point(427, 130);
+            this.btnlocalidades.Location = new System.Drawing.Point(343, 130);
             this.btnlocalidades.Name = "btnlocalidades";
             this.btnlocalidades.Size = new System.Drawing.Size(101, 75);
             this.btnlocalidades.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -111,7 +111,7 @@
             this.bunifuCustomLabel2.BackColor = System.Drawing.Color.Transparent;
             this.bunifuCustomLabel2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
-            this.bunifuCustomLabel2.Location = new System.Drawing.Point(423, 208);
+            this.bunifuCustomLabel2.Location = new System.Drawing.Point(339, 208);
             this.bunifuCustomLabel2.Name = "bunifuCustomLabel2";
             this.bunifuCustomLabel2.Size = new System.Drawing.Size(105, 18);
             this.bunifuCustomLabel2.TabIndex = 187;
@@ -156,14 +156,16 @@
             // btnControl
             // 
             this.btnControl.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnControl.Enabled = false;
             this.btnControl.Image = ((System.Drawing.Image)(resources.GetObject("btnControl.Image")));
             this.btnControl.ImageActive = null;
-            this.btnControl.Location = new System.Drawing.Point(248, 130);
+            this.btnControl.Location = new System.Drawing.Point(583, 6);
             this.btnControl.Name = "btnControl";
-            this.btnControl.Size = new System.Drawing.Size(101, 75);
+            this.btnControl.Size = new System.Drawing.Size(14, 10);
             this.btnControl.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnControl.TabIndex = 32;
             this.btnControl.TabStop = false;
+            this.btnControl.Visible = false;
             this.btnControl.Zoom = 10;
             this.btnControl.Click += new System.EventHandler(this.btnControl_Click);
             // 
@@ -171,13 +173,15 @@
             // 
             this.bunifuCustomLabel9.AutoSize = true;
             this.bunifuCustomLabel9.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuCustomLabel9.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel9.Enabled = false;
+            this.bunifuCustomLabel9.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
-            this.bunifuCustomLabel9.Location = new System.Drawing.Point(262, 208);
+            this.bunifuCustomLabel9.Location = new System.Drawing.Point(554, 19);
             this.bunifuCustomLabel9.Name = "bunifuCustomLabel9";
-            this.bunifuCustomLabel9.Size = new System.Drawing.Size(67, 18);
+            this.bunifuCustomLabel9.Size = new System.Drawing.Size(46, 12);
             this.bunifuCustomLabel9.TabIndex = 31;
             this.bunifuCustomLabel9.Text = "Control";
+            this.bunifuCustomLabel9.Visible = false;
             // 
             // btnPaquetes
             // 
@@ -262,7 +266,7 @@
             this.btnEscuelas.BackColor = System.Drawing.Color.WhiteSmoke;
             this.btnEscuelas.Image = ((System.Drawing.Image)(resources.GetObject("btnEscuelas.Image")));
             this.btnEscuelas.ImageActive = null;
-            this.btnEscuelas.Location = new System.Drawing.Point(61, 130);
+            this.btnEscuelas.Location = new System.Drawing.Point(157, 130);
             this.btnEscuelas.Name = "btnEscuelas";
             this.btnEscuelas.Size = new System.Drawing.Size(101, 75);
             this.btnEscuelas.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -277,7 +281,7 @@
             this.bunifuCustomLabel3.BackColor = System.Drawing.Color.Transparent;
             this.bunifuCustomLabel3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
-            this.bunifuCustomLabel3.Location = new System.Drawing.Point(67, 208);
+            this.bunifuCustomLabel3.Location = new System.Drawing.Point(163, 208);
             this.bunifuCustomLabel3.Name = "bunifuCustomLabel3";
             this.bunifuCustomLabel3.Size = new System.Drawing.Size(81, 18);
             this.bunifuCustomLabel3.TabIndex = 21;

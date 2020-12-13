@@ -66,6 +66,7 @@
   <ItemGroup>
     <Compile Include="Clases\cl_globales.cs" />
     <Compile Include="Clases\Conexion.cs" />
+    <Compile Include="Clases\Recibo.cs" />
     <Compile Include="Forms\frm-acercade.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -228,6 +229,23 @@
       <DependentUpon>GrupoALumnoNotaFechas.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Informes\VentasLiquidadas.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VentasLiquidadas.rpt</DependentUpon>
+    </Compile>
+    <Compile Include="Informes\VentasTodas.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VentasTodas.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Informes\VentasPorUsuarios.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VentasPorUsuarios.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\frm-acercade.resx">
@@ -313,6 +331,18 @@
     <EmbeddedResource Include="Informes\GrupoALumnoNotaFechas.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>GrupoALumnoNotaFechas.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Informes\VentasLiquidadas.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>VentasLiquidadas.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Informes\VentasTodas.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>VentasTodas.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Informes\VentasPorUsuarios.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>VentasPorUsuarios.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
